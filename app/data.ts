@@ -28,15 +28,13 @@ type SocialLink = {
 }
 
 export const PROJECTS: Project[] = [
-  // {
-  //   name: 'Motion Primitives Pro',
-  //   description:
-  //     'Advanced components and templates to craft beautiful websites.',
-  //   link: 'https://pro.motion-primitives.com/',
-  //   video:
-  //     'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/newProfileItem/d898be8a-7037-4c71-af0c-8997239b050d.mp4?_a=DATAdtAAZAA0',
-  //   id: 'project1',
-  // },
+  {
+    name: 'Worldscope',
+    description: 'Scalable semantic search on images based on CLIP',
+    link: 'https://shrnik.github.io/worldscope-ui/#/search',
+    video: '',
+    id: 'project1',
+  },
   // {
   //   name: 'Motion Primitives',
   //   description: 'UI kit to make beautiful, animated interfaces.',
@@ -49,16 +47,24 @@ export const PROJECTS: Project[] = [
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
   {
+    company: 'Vision Lab @ GWU',
+    title: 'Graduate Researcher',
+    start: '2024',
+    end: 'present',
+    link: '/experience/vision-lab',
+    id: 'research1',
+  },
+  {
     company: 'Regie.ai',
     title: 'Senior Full Stack Engineer',
     start: '2020',
     end: '2024',
-    link: 'https://regie.ai',
+    link: '/experience/regie',
     id: 'work1',
   },
   {
-    company: 'Software Engineer',
-    title: 'BharatPe',
+    company: 'BharatPe',
+    title: 'Software Engineer',
     start: 'Apr 2020',
     end: 'Nov 2020',
     link: 'https://bharatpe.com/',
