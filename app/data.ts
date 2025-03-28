@@ -35,6 +35,13 @@ export const PROJECTS: Project[] = [
     video: '',
     id: 'project1',
   },
+  {
+    name: 'Text Highlighter HOC',
+    description: 'React HOC to highlight text in contenteEditable elements',
+    link: 'https://github.com/shrnik/simple-highlighter',
+    video: '',
+    id: 'project2',
+  },
   // {
   //   name: 'Motion Primitives',
   //   description: 'UI kit to make beautiful, animated interfaces.',
