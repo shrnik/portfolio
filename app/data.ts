@@ -31,7 +31,7 @@ export const PROJECTS: Project[] = [
   {
     name: 'Worldscope',
     description: 'Scalable semantic search on images based on CLIP',
-    link: 'https://shrnik.github.io/worldscope-ui/#/search',
+    link: 'https://github.com/shrnik/worldscope-server',
     video: '',
     id: 'project1',
   },
@@ -47,8 +47,8 @@ export const PROJECTS: Project[] = [
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
   {
-    company: 'Vision Lab @ GWU',
-    title: 'Graduate Researcher',
+    company: 'Vision Lab',
+    title: 'Machine Learning Research Fellow',
     start: '2024',
     end: 'present',
     link: '/experience/vision-lab',
@@ -56,7 +56,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
   },
   {
     company: 'Regie.ai',
-    title: 'Senior Full Stack Engineer',
+    title: 'Founding Engineer',
     start: '2020',
     end: '2024',
     link: '/experience/regie',
