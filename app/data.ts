@@ -82,7 +82,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     title: 'Software Engineer',
     start: '2019',
     end: '2020',
-    link: 'https://shipsy.io/',
+    link: '/experience/shipsy',
     id: 'work3',
   },
 ]
