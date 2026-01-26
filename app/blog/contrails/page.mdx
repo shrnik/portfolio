@@ -1,0 +1,74 @@
+# Looking at the Sky: How Ground Cameras Can Help Reduce Aviation's Climate Impact
+
+<Cover src="/contrails_detection.png" alt="Contrail detection from ground camera" caption="Ground-based camera detecting aircraft contrails in real-time" />
+
+When we look up and see thin white lines stretching across the sky, we're seeing *contrails*—condensation trails formed by aircraft. While they may look delicate and fleeting, contrails have a significant impact on climate. In fact, they contribute notably to global warming by trapping outgoing heat in the atmosphere. Understanding when and where they form is a crucial step toward reducing aviation’s climate footprint.
+
+Traditionally, contrail detection relies heavily on satellite imagery. Satellites provide global coverage, but they come with important limitations: relatively low spatial and temporal resolution, and difficulty in attributing a specific contrail to the exact flight that produced it. This makes it hard to move from observation to actionable mitigation strategies.
+
+That’s where ground-based cameras come in.
+
+## Why Ground-Based Cameras?
+
+Ground cameras are everywhere: on campuses, rooftops, research stations, and public webcams. They offer:
+- High temporal resolution (images every few seconds)
+- Proximity to contrail formation
+- A clear geometric link between aircraft and the visible sky
+
+By combining camera data with ADS-B flight tracking signals, we can directly connect what we see in the sky to the aircraft responsible for it.
+
+## From Aircraft to Pixels
+
+The first step is camera calibration. Using a point-picker tool, we map known 3D world coordinates (latitude, longitude, altitude) to 2D image coordinates. This gives us the camera’s intrinsic and extrinsic parameters and allows us to project any aircraft’s 3D position into the image plane with high accuracy.
+
+Once we know where a plane is in the image, we define a *track region*: the area swept by the aircraft over the last 30 seconds along its projected motion. Since contrails form behind the aircraft and align with its direction of travel, this region is where we expect to see them.
+
+## Detecting Contrails in the Wild
+
+Inside each track region, we apply a lightweight but effective computer vision pipeline:
+
+1. **Grayscale conversion**  
+2. **Frame differencing** to isolate new changes in the sky  
+3. **Canny edge detection** to highlight linear structures  
+4. **Hough transform** to detect line segments  
+
+<Cover src="/contrails_ip_pipeline.png" alt="Contrail detection from ground camera" caption="Ground-based camera detecting aircraft contrails in real-time" />
+
+If we find line segments that:
+- Are long enough  
+- Align within a small angular tolerance of the aircraft’s direction  
+
+then we classify that aircraft as *contrail-forming*.
+
+By comparing the detected contrail length with the aircraft’s traveled distance, we can further distinguish:
+- **Short contrails** that dissipate quickly  
+- **Long contrails** that are more likely to persist and contribute to warming  
+
+## Scaling Up: From Frames to Climate Insights
+
+One of the most exciting aspects of this approach is efficiency. A full 24 hours of video from a single camera can be processed in about 20 minutes. This makes it easy to scale across:
+- Long time periods  
+- Multiple cameras  
+- Different geographic locations  
+
+Running the system over an entire month allows us to build *contrail-forming region (CFR)* maps: areas of airspace where contrails are consistently observed. These regions are often vertically thin, which is critical from a mitigation perspective.
+
+## Why Altitude Matters
+
+Since CFRs tend to occupy narrow altitude bands, small vertical adjustments in flight paths could significantly reduce contrail formation. This supports a simple but powerful idea:
+
+> A few hundred meters of altitude change could prevent a contrail that would otherwise warm the climate.
+
+<Cover src="/length_visalization.png" alt="Contrail detection from ground camera" caption="Ground-based camera detecting aircraft contrails in real-time" />
+
+Ground-based cameras therefore provide not just detection, but *actionable intelligence* for contrail avoidance strategies.
+
+## Looking Ahead
+
+With a network of calibrated cameras and access to real-time flight data, we can:
+- Continuously monitor contrail activity  
+- Identify high-risk altitude layers  
+- Support climate-aware flight planning  
+
+Sometimes, big climate insights start with something simple:  
+just looking up at the sky, and understanding what we see.

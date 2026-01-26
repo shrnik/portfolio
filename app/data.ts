@@ -88,11 +88,17 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
 ]
 
 export const BLOG_POSTS: BlogPost[] = [
+  {
+    title: 'Looking up at the skies: Detecting contrails',
+    description: 'Using calibrated cameras and ADS-B data to detect contrails',
+    link: '/blog/contrails',
+    uid: 'blog-1',
+  },
   // {
   //   title: 'Exploring the Intersection of Design, AI, and Design Engineering',
   //   description: 'How AI is changing the way we design',
   //   link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
-  //   uid: 'blog-1',
+  //   uid: 'blog-2',
   // },
   // {
   //   title: 'Why I left my job to start my own company',
