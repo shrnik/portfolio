@@ -55,7 +55,7 @@ export const PROJECTS: Project[] = [
 export const WORK_EXPERIENCE: WorkExperience[] = [
   {
     company: 'Vision Lab',
-    title: 'Machine Learning Research Fellow',
+    title: 'Computer Vision Research Fellow',
     start: '2024',
     end: 'present',
     link: '/experience/vision-lab',
